@@ -12,6 +12,7 @@ gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'simple_form', '>= 3.1.0rc1'
 gem 'pg', '~> 0.18.4'
 gem 'rails_12factor', '~> 0.0.3'
+gem 'devise', '~> 4.2'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
