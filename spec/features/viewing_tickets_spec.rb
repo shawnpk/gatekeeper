@@ -2,13 +2,16 @@ require 'rails_helper'
 
 RSpec.feature 'Users can view tickets' do
   before do
+    author = FactoryGirl.create(:user)
     atom = FactoryGirl.create(:project, name: 'Atom.io')
     FactoryGirl.create(:ticket, project: atom,
+                                author: author,
                                 name: 'Make it shiny!',
                                 description: 'Gradients! Starbursts! Oh my!')
 
     safari = FactoryGirl.create(:project, name: 'Safari')
     FactoryGirl.create(:ticket, project: safari,
+                                author: author,
                                 name: 'Standards compliance',
                                 description: 'Isn\'t a joke!')
 
