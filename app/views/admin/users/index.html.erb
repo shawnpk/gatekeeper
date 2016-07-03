@@ -10,6 +10,8 @@
 
 <ul>
   <% @users.each do |user| %>
-    <%= link_to user, [:admin, user] %>
+    <ul>
+      <li><%= link_to user, [:admin, user] %></li>
+    </ul>
   <% end %>
 </ul>
