@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    authorize @project, :show?
+    authorize @project
   end
 
   def edit
