@@ -4,10 +4,14 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all.order('created_at DESC')
   end
+
   def show
+    authorize @project, :show?
   end
+
   def edit
   end
+
   def update
     if @project.update(project_params)
       flash[:notice] = 'Project has been updated.'
@@ -22,6 +26,7 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:name, :description)
     end
+
     def set_project
       @project = Project.find(params[:id])
     rescue ActiveRecord::RecordNotFound

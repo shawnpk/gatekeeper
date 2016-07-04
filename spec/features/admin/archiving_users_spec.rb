@@ -1,4 +1,4 @@
-require 'rails_helper'
+# require 'rails_helper'
 
 RSpec.feature 'Ad admin can archive users' do
   let(:admin_user)  { FactoryGirl.create(:user, :admin) }
