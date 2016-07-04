@@ -25,4 +25,18 @@ RSpec.feature 'Admin can manage a user\'s roles' do
     expect(page).to have_content 'Safari: Viewer'
     expect(page).to have_content 'Atom.io: Manager'
   end
+
+  scenario 'when assigning roles to a new user' do
+    visit new_admin_user_path
+
+    fill_in 'Email', with: 'newuser@gatekeeper.com'
+    fill_in 'Password', with: 'password'
+
+    select 'Editor', from: 'Safari'
+    click_button 'Create User'
+
+    click_link 'newuser@gatekeeper.com'
+    expect(page).to have_content 'Safari: Editor'
+    expect(page).not_to have_content 'Atom.io'
+  end
 end
