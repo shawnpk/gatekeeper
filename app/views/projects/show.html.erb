@@ -4,8 +4,10 @@
   <h1><%= @project.name %></h1>
 
   <ul class="actions">
-    <%= link_to "Edit Project",
-    edit_project_path(@project), class: 'edit' %>
+    <% if policy(@project).update? %>
+      <%= link_to "Edit Project",
+      edit_project_path(@project), class: 'edit' %>
+    <% end %>
     <% admins_only do %>
       <%= link_to 'Delete Project', admin_project_path(@project),
       method: :delete,
