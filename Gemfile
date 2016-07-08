@@ -14,6 +14,7 @@ gem 'pg', '~> 0.18.4'
 gem 'rails_12factor', '~> 0.0.3'
 gem 'devise', '~> 4.2'
 gem 'pundit', '~> 1.1'
+gem 'carrierwave', '~> 0.11.2'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

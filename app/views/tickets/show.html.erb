@@ -2,6 +2,7 @@
   <header>
     <h1><%= @project.name %></h1>
   </header>
+
   <header>
     <h2><%= @ticket.name %></h2>
     <ul class="actions">
@@ -17,6 +18,18 @@
       </li>
     </ul>
   </header>
+
+  <%= simple_format(@ticket.description) %>
+  <% if @ticket.attachment.present? %>
+    <h4>Attachemtn</h4>
+    <div class="attachment">
+      <p>
+        <%= link_to File.basename(@ticket.attachment.url), @ticket.attachment.url %>
+        (<%= number_to_human_size(@ticket.attachment.size) %>)
+      </p>
+    </div><!-- end .attachment -->
+  <% end %>
+
   <table id="attributes">
     <tr>
       <th>Author:</th>
